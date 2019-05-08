@@ -17,6 +17,3 @@ printMe();
 page1();
 console.log(Json);
 $('#json').text(JSON.stringify(Json));
-
-console.log(__("Hello World"));
-console.log(__("Missing Text"));

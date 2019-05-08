@@ -12,6 +12,7 @@ module.exports = {
             '@babel/polyfill',
             './src/js/index.js'
         ],
+        page1: './src/js/page1.js'
     },
     output: {
         filename: '[name].bundle.js',
@@ -21,12 +22,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/pages/index.html',
             filename: 'index.html',
-            inject: true,
         }),
         new HtmlWebpackPlugin({
             template: './src/pages/page1.html',
             filename: 'page1.html',
-            inject: 'body',
         }),
     ],
     module: {
