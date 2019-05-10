@@ -15,7 +15,7 @@ module.exports = {
         page1: './src/js/page1.js'
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: 'js/[name].bundle.js',
         path: path.resolve(__dirname, '../dist')
     },
     plugins: [
