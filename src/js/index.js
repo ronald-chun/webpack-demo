@@ -1,10 +1,9 @@
-window.$ = require('jquery');
-
 import printMe from './print';
-import page1 from './page1';
 import Json from '../assets/jsons/generated';
 
 printMe();
-page1();
-console.log(Json);
+console.log("json testing", Json);
 $('#json').text(JSON.stringify(Json));
+
+console.log("Polyfill testing", [1, 2, 3].map((n) => n + 1));
+

@@ -1,3 +1,4 @@
-export default function page1() {
-    console.log("page 1 loaded");
-}
+$(function() {
+    alert("page1.js loaded");
+    console.log("page1.js loaded");
+});
