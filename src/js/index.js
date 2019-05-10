@@ -1,16 +1,8 @@
 window.$ = require('jquery');
 
-import _ from 'lodash';
-
 import printMe from './print';
 import page1 from './page1';
 import Json from '../assets/jsons/generated';
-
-// function component() {
-//     const element = document.createElement('div');
-//     return element;
-// }
-// document.body.appendChild(component());
 
 printMe();
 page1();
