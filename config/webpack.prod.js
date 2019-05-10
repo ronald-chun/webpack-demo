@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const webpack = require('webpack');
 
 require("@babel/polyfill");
 
@@ -25,7 +26,7 @@ module.exports = merge(common, {
                         warnings: false,
                         comparisons: false,
                         inline: 2,
-                        drop_console: true // or pure_funcs: ['console.log', 'console.info']
+                        // drop_console: true // or pure_funcs: ['console.log', 'console.info']
                     },
                     mangle: {
                         safari10: true,
@@ -41,5 +42,8 @@ module.exports = merge(common, {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        new webpack.DefinePlugin({
+            apiBaseUrl: JSON.stringify('http://localhost:3000')
+        })
     ],
 });

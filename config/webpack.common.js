@@ -3,8 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
-require("@babel/polyfill");
-
 module.exports = {
     entry: {
         app: [
@@ -95,6 +93,8 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: './css/[name].css?_=[hash]'
-        }),
+        })
     ],
 };
+
+
