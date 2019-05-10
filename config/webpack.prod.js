@@ -21,7 +21,31 @@ module.exports = {
         path: path.resolve(__dirname, '../dist'),
     },
     optimization: {
-        minimizer: [new TerserPlugin()],
+        minimizer: [
+            new TerserPlugin({
+                parallel: true,
+                terserOptions: {
+                    parse: {
+                        ecma: 8,
+                    },
+                    compress: {
+                        ecma: 5,
+                        warnings: false,
+                        comparisons: false,
+                        inline: 2,
+                        drop_console: true // or pure_funcs: ['console.log', 'console.info']
+                    },
+                    mangle: {
+                        safari10: true,
+                    },
+                    output: {
+                        ecma: 5,
+                        comments: false,
+                        ascii_only: true,
+                    },
+                },
+            }),
+        ],
     },
     module: {
         rules: [{
